@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Car Adventures!</h1>
+    <h2>Type "h" to honk, "d" to drive to work, "w" to drive around the world, or "t" to get a tuneup.</h2>
+    <h2>See conosle for car stats.</h2>
+
+<script>
+    //"t" for tune-up, "a" for Around the World, "h" for honk, "w" Drive to Work
+
+    var caroptions = ['h', 'a', 't', 'w'];
+
+    var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+        
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+      };
+
+      document.onkeyup = function(newCar){
+         console.log(newCar);
+       
+      if(newCar.key === "h"){
+          car.honk();
+      }
+      else if (newCar.key === "d"){
+          car.driveToWork();
+      }
+      else if(newCar.key === "w"){
+          car.driveAroundWorld();
+      }
+      else if(newCar.key === "t"){
+          car.getTuneUp();
+      }
+    
+      console.log(caroptions.includes(newCar.key)); 
+      
+      };
+     // var inputkeyd = document.addEventListener("click", onkeyup);
+
+ 
+
+</script>
+
+
+    
+</body>
+</html>
